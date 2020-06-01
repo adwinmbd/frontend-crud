@@ -4,4 +4,4 @@
 
 This repository contains these simple todo CRUD projects :
 
-- Vue-todo
+- Vue-todos
