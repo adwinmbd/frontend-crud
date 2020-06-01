@@ -1,4 +1,4 @@
-# PARCEL-VUE-TEMPLATE
+# VUE-CRUD
 
 > A **CRUD** todo app built using [Vue.js](https://vuejs.org/) framework and [Mirage.js](https://miragejs.com/) mock API.
 
