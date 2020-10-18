@@ -1,6 +1,11 @@
-import confetti from "canvas-confetti";
+import "alpinejs";
+import { makeServer } from "./server";
+// import confetti from "canvas-confetti";
 
-confetti.create(document.getElementById("canvas"), {
-  resize: true,
-  useWorker: true,
-})({ particleCount: 200, spread: 200 });
+makeServer();
+/*
+if (process.env.NODE_ENV === "development") {
+  makeServer();
+}
+console.log(process.env.NODE_ENV);
+*/

@@ -8,7 +8,9 @@
     "lint": "prettier --check \"src/**/*.js\""
   },
   "dependencies": {
-    "canvas-confetti": "^1.2.0"
+    "alpinejs": "^2.7.0",
+    "canvas-confetti": "^1.2.0",
+    "miragejs": "^0.1.41"
   },
   "devDependencies": {
     "prettier": "^2.1.1",
