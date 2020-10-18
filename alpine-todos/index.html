@@ -3,15 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <!--<div id="app"></div>-->
-    <img id="img" src="./src/assets/logo.svg" />
-    <canvas id="canvas"></canvas>
+    <title>Alpine.js Todo Demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css "
+    />
     <script type="module" src="/src/index.js"></script>
+    <script src="/src/crud.js"></script>
+  </head>
+  <body class="has-background-light" style="height: 100vh">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <section class="section" x-data="todos()" x-init="fetchTodos()">
+      <!-- <section class="section" x-data="todos()"> -->
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-5-tablet is-10-mobile">
+            <div class="card">
+              <header class="header">
+                <p class="card-header-title heading">Todo App</p>
+              </header>
+              <div class="card-content">
+                <!--<div v-if="editing === false">-->
+                <template x-if="editing === false">
+                  <form @submit.prevent="addTodo()">
+                    <div class="field has-addons has-addons-centered">
+                      <div class="control">
+                        <input
+                          x-model="addTodoTitle"
+                          class="input"
+                          type="text"
+                          placeholder="Add todo..."
+                        />
+                      </div>
+                      <div class="control">
+                        <button class="button is-primary" type="submit">
+                          <span class="icon is-small">
+                            <i class="fi-plus"></i>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </template>
+                <!--<div v-else>-->
+                <template x-if="editing === true">
+                  <form @submit.prevent="updateTodo()">
+                    <!-- <input :value="editedTodo.id" type="hidden" /> -->
+                    <div class="field has-addons has-addons-centered">
+                      <div class="control">
+                        <!-- x-model="editTodoTitle" -->
+                        <!-- :value="editedTodo.title" -->
+                        <input
+                          x-model="editTodo.title"
+                          class="input"
+                          type="text"
+                          placeholder="Update todo..."
+                        />
+                      </div>
+                      <div class="control">
+                        <button class="button is-warning" type="submit">
+                          <span class="icon is-small">
+                            <i class="fi-page-edit"></i>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </template>
+              </div>
+              <hr />
+              <ul>
+                <template x-for="todo in todos" :key="todo.id">
+                  <li class="list-item">
+                    <div
+                      class="is-flex"
+                      style="
+                        align-items: center;
+                        padding: 15px;
+                        border-bottom: 2px solid whitesmoke;
+                      "
+                    >
+                      <span class="is-pulled-left" x-text="todo.title"></span>
+                      <div style="flex: 1"></div>
+                      <button
+                        class="button is-text is-pulled-right is-small is-warning"
+                        @click="setEditMode(todo)"
+                      >
+                        <span class="icon">
+                          <i class="fi-page-edit"></i>
+                        </span>
+                      </button>
+                      &nbsp;
+                      <button
+                        class="button is-text is-pulled-right is-small is-danger"
+                        @click="deleteTodo(todo.id)"
+                      >
+                        <span class="icon">
+                          <i class="fi-trash"></i>
+                        </span>
+                      </button>
+                    </div>
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

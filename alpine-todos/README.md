@@ -1,9 +1,6 @@
-# VITEJS-STARTER
+# ALPINE-CRUD
 
-> Vanilla Javascript starter template.
-
-- Developer environment setup with [Vite](https://github.com/vitejs/vite)
-- Linting with [Prettier](https://prettier.io/)
+> A **CRUD** todo app built using [Alpine.js](https://github.com/alpinejs/alpine) framework and [Mirage.js](https://miragejs.com/) mock API.
 
 ## Clone repo in an empty directory
 
@@ -42,3 +39,9 @@ npm run lint
 ```
 npm run format
 ```
+
+# TODO
+
+---
+
+- [ ] Add Loading animation
