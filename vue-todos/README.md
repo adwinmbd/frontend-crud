@@ -1,41 +1,42 @@
-# VUE-CRUD
+# VUE-TODO
 
-> A **CRUD** todo app built using [Vue.js](https://vuejs.org/) framework and [Mirage.js](https://miragejs.com/) mock API.
+> Vanilla Javascript starter template.
 
-### Install:
+- Developer environment setup with [Vite](https://github.com/vitejs/vite)
+- Linting with [Prettier](https://prettier.io/)
+
+![Home page](vue-todo.png)
+
+## Clone repo in an empty directory
+
+## Install:
 
 ```
 npm install
 ```
 
-### To run:
+## To run:
 
 ```
 npm start
 ```
 
-Opens in the browser on [http://localhost:1234](http://localhost:1234).
+Opens in the browser on [http://localhost:3000](http://localhost:3000)
 
-### To build:
+## To build:
 
 ```
 npm run build
 ```
 
-### To clean:
-
-```
-npm run clean
-```
-
-### To lint:
+## To lint:
 
 ```
 npm run lint
 ```
 
-### To fix linting errors:
+## To lint:
 
 ```
-npm run lint
+npm run format
 ```

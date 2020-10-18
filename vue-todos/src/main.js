@@ -1,16 +1,11 @@
-import Vue from "vue";
+import { createApp } from "vue";
 import App from "./App.vue";
-import "bulma/css/bulma.css";
 import router from "./router";
+import "bulma/css/bulma.css";
 import { makeServer } from "./server";
-
-Vue.config.productionTip = false;
 
 if (process.env.NODE_ENV === "development") {
   makeServer();
 }
 
-new Vue({
-  router,
-  render: (h) => h(App),
-}).$mount("#app");
+createApp(App).use(router).mount("#app");
