@@ -2,13 +2,13 @@
 
 > A **CRUD** todo app built using [Vue.js](https://vuejs.org/) framework and [Mirage.js](https://miragejs.com/) mock API.
 
-## Install:
+### Install:
 
 ```
 npm install
 ```
 
-## To run:
+### To run:
 
 ```
 npm start
@@ -16,25 +16,25 @@ npm start
 
 Opens in the browser on [http://localhost:1234](http://localhost:1234).
 
-## To build:
+### To build:
 
 ```
 npm run build
 ```
 
-## To clean:
+### To clean:
 
 ```
 npm run clean
 ```
 
-## To lint:
+### To lint:
 
 ```
 npm run lint
 ```
 
-## To fix linting errors:
+### To fix linting errors:
 
 ```
 npm run lint
