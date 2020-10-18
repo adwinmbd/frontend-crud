@@ -92,7 +92,7 @@
 </style>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 import Spinner from "../components/Spinner.vue";
 export default {
   name: "Todos",
