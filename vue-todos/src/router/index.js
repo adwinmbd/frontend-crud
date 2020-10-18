@@ -1,15 +1,14 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import About from "../pages/About.vue";
-import Todos from "../pages/Home.vue";
+import Home from "../pages/Home.vue";
 
-Vue.use(VueRouter);
+const history = createWebHistory();
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: Todos,
+    name: "Home",
+    component: Home,
   },
   {
     path: "/about",
@@ -18,9 +17,8 @@ const routes = [
   },
 ];
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history,
   routes,
 });
 

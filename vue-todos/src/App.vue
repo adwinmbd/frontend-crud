@@ -21,24 +21,8 @@
 </template>
 
 <script>
-import Major from "./components/Major.vue";
-import Spinner from "./components/Spinner.vue";
 export default {
   name: "App",
-  components: {
-    Major,
-    Spinner,
-  },
-  data() {
-    return {
-      /*activeTab: 0,*/
-    };
-  },
-  methods: {
-    handleClick() {
-      this.$router.push("famas");
-    },
-  },
 };
 </script>
 

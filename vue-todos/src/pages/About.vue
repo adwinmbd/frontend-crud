@@ -11,9 +11,7 @@
         demonstrate how Mirage's in-memory database enables realistic data
         fetching and persisting during a single application session.
       </p>
-      <p class="top">
-        Mirage's state is reset whenever the application is reloaded.
-      </p>
+      <p class="top">Mirage's state is reset whenever the application is reloaded.</p>
     </div>
   </div>
 </template>
