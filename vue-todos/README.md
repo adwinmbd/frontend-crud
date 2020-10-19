@@ -1,9 +1,6 @@
-# VUE-TODO
+# VUE-CRUD
 
-> Vanilla Javascript starter template.
-
-- Developer environment setup with [Vite](https://github.com/vitejs/vite)
-- Linting with [Prettier](https://prettier.io/)
+> A **CRUD** todo app built using [Vue.js](https://vuejs.org) framework and [Mirage.js](https://miragejs.com/) mock API.
 
 ![Home page](vue-todo.png)
 

@@ -159,7 +159,8 @@ export default {
         await fetch(`/api/todos/${id}`, {
           method: "DELETE",
         });
-        this.getTodos();
+        this.todos = this.todos.filter((todo) => todo.id !== id);
+        // this.getTodos();
       } catch (e) {
         console.log(e);
         return;
