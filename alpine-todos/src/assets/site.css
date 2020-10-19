@@ -1,0 +1,13 @@
+:root {
+  background-color: #e2e8f0;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  /*padding: 0;
+  margin: 0;
+  width: 100%;*/
+  width: 100%;
+  min-height: 100vh;
+}

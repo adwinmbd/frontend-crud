@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "alpinejs": "^2.7.0",
-    "canvas-confetti": "^1.2.0",
+    "bulma": "^0.9.1",
     "miragejs": "^0.1.41"
   },
   "devDependencies": {
