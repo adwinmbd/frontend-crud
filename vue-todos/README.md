@@ -1,6 +1,6 @@
 # VUE-CRUD
 
-> A **CRUD** todo app built using [Alpine.js](https://vuejs.org) framework and [Mirage.js](https://miragejs.com/) mock API.
+> A **CRUD** todo app built using [Vue.js](https://vuejs.org) framework and [Mirage.js](https://miragejs.com/) mock API.
 
 ![Home page](vue-todo.png)
 
