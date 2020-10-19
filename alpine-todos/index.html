@@ -3,37 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
-    <title>Alpine.js Todo Demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css "
-    />
+    <title>Alpine.js Todo</title>
     <script type="module" src="/src/index.js"></script>
     <script src="/src/crud.js"></script>
   </head>
-  <body class="has-background-light" style="height: 100vh">
+  <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <section class="section" x-data="todos()" x-init="fetchTodos()">
-      <!-- <section class="section" x-data="todos()"> -->
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-5-tablet is-10-mobile">
             <div class="card">
               <header class="header">
-                <p class="card-header-title heading">Todo App</p>
+                <p class="card-header-title">Todo App</p>
               </header>
               <div class="card-content">
-                <!--<div v-if="editing === false">-->
                 <template x-if="editing === false">
                   <form @submit.prevent="addTodo()">
                     <div class="field has-addons has-addons-centered">
                       <div class="control">
                         <input
-                          x-model="addTodoTitle"
+                          x-model="newTodo.text"
                           class="input"
                           type="text"
                           placeholder="Add todo..."
@@ -42,7 +32,7 @@
                       <div class="control">
                         <button class="button is-primary" type="submit">
                           <span class="icon is-small">
-                            <i class="fi-plus"></i>
+                            <img height="32" width="32" src="/plus.svg" />
                           </span>
                         </button>
                       </div>
@@ -52,13 +42,11 @@
                 <!--<div v-else>-->
                 <template x-if="editing === true">
                   <form @submit.prevent="updateTodo()">
-                    <!-- <input :value="editedTodo.id" type="hidden" /> -->
+                    <!-- <input :value="editTodo.id" type="hidden" /> -->
                     <div class="field has-addons has-addons-centered">
                       <div class="control">
-                        <!-- x-model="editTodoTitle" -->
-                        <!-- :value="editedTodo.title" -->
                         <input
-                          x-model="editTodo.title"
+                          x-model="editTodo.text"
                           class="input"
                           type="text"
                           placeholder="Update todo..."
@@ -67,7 +55,7 @@
                       <div class="control">
                         <button class="button is-warning" type="submit">
                           <span class="icon is-small">
-                            <i class="fi-page-edit"></i>
+                            <img height="32" width="32" src="/edit.svg" />
                           </span>
                         </button>
                       </div>
@@ -83,18 +71,18 @@
                       class="is-flex"
                       style="
                         align-items: center;
-                        padding: 15px;
+                        padding: 8px;
                         border-bottom: 2px solid whitesmoke;
                       "
                     >
-                      <span class="is-pulled-left" x-text="todo.title"></span>
+                      <span class="is-pulled-left" x-text="todo.text"></span>
                       <div style="flex: 1"></div>
                       <button
                         class="button is-text is-pulled-right is-small is-warning"
                         @click="setEditMode(todo)"
                       >
                         <span class="icon">
-                          <i class="fi-page-edit"></i>
+                          <img height="32" width="32" src="/edit.svg" />
                         </span>
                       </button>
                       &nbsp;
@@ -103,7 +91,7 @@
                         @click="deleteTodo(todo.id)"
                       >
                         <span class="icon">
-                          <i class="fi-trash"></i>
+                          <img height="32" width="32" src="/trash.svg" />
                         </span>
                       </button>
                     </div>
