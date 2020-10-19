@@ -155,7 +155,10 @@ export default {
     // delete todo
     async deleteTodo(id) {
       try {
-        await axios.delete(`/api/todos/${id}`); // delete todo
+        // await axios.delete(`/api/todos/${id}`); // delete todo
+        await fetch(`/api/todos/${id}`, {
+          method: "DELETE",
+        });
         this.getTodos();
       } catch (e) {
         console.log(e);
