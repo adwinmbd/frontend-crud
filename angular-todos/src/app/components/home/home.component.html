@@ -1,0 +1,115 @@
+<div class="card">
+  <header class="header">
+    <p class="card-header-title heading">Todos</p>
+  </header>
+  <div class="card-content">
+    <!-- <div v-if="editing === false"> -->
+      <!-- <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()"> -->
+      <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+        <div class="field has-addons has-addons-centered">
+          <div class="control">
+            <input class="input" type="text" placeholder="Add todo..." formControlName="text"/>
+          </div>
+          <div class="control" [hidden]="editing">
+            <button class="button is-primary">
+              <span class="icon is-small">
+                <img height="32" width="32" src="/add-circle-outline.svg" />
+              </span>
+            </button>
+          </div>
+          <div class="control" [hidden]="!editing">
+            <button class="button is-warning">
+              <span class="icon is-small">
+                <img height="32" width="32" src="/create-outline.svg" />
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
+    <!-- </div> -->
+    <!-- <div v-else>
+      <form @submit.prevent="postEdit">
+        <input :value="editedTodo.id" type="hidden" />
+        <div class="field has-addons has-addons-centered">
+          <div class="control">
+            <input
+              v-model="editedTodo.text"
+              class="input"
+              type="text"
+              placeholder="Update todo..."
+            />
+          </div>
+          <div class="control">
+            <button class="button is-warning">
+              <span class="icon is-small">
+                <img height="32" width="32" src="../assets/img/edit-icon.svg" />
+              </span>
+            </button>
+          </div>
+        </div>
+      </form> -->
+
+      <!--
+      <p>Editing ...</p>
+      -->
+    <!-- </div> -->
+
+    <hr />
+    <ul>
+      <!-- <li v-if="todos.length < 1">
+        <Spinner></Spinner>
+      </li> -->
+      <!-- <li v-else class="list-item" v-for="todo in todos" :key="todo.id">
+        <div class="is-flex" style="align-items: center;">
+          <span class="is-pulled-left">{{ todo.text }}</span>
+          <div style="flex: 1;"></div>
+          <button
+            class="button is-text is-pulled-right is-small is-warning"
+            @click="editTodo(todo)"
+          >
+            <span class="icon">
+              <img height="32" width="32" src="../assets/img/edit-icon.svg" />
+            </span>
+          </button>
+          &nbsp;
+          <button
+            class="button is-text is-pulled-right is-small is-danger"
+            @click="deleteTodo(todo.id)"
+          >
+            <span class="icon">
+              <img height="32" width="32" src="../assets/img/trash-icon.svg" />
+            </span>
+          </button>
+        </div>
+      </li> -->
+      <li *ngIf="todos.length === 0">
+        No todos !
+      </li>
+      <ng-container *ngIf="todos.length!==0">
+        <li class="list-item" *ngFor="let todo of todos">
+          <div class="is-flex" style="align-items: center;">
+            <span class="is-pulled-left">{{ todo.text }}</span>
+            <div style="flex: 1;"></div>
+            <button
+              class="button is-text is-pulled-right is-small is-warning"
+              (click)="setEditMode(todo)"
+            >
+              <span class="icon">
+                <img height="32" width="32" src="/create-outline.svg" />
+              </span>
+            </button>
+            &nbsp;
+            <button
+              class="button is-text is-pulled-right is-small is-danger"
+              (click)="removeTodo(todo)"
+            >
+              <span class="icon">
+                <img height="32" width="32" src="/trash-outline.svg" />
+              </span>
+            </button>
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

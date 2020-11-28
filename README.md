@@ -4,5 +4,6 @@
 
 This repository contains these simple todo CRUD projects :
 
-- Vue-todos
 - Alpine-todos
+- Angular-todos
+- Vue-todos
