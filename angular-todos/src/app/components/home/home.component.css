@@ -1,0 +1,11 @@
+/*@import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.css";*/
+.top {
+  margin-top: 0.5rem;
+}
+.heading {
+  font-size: 1.5rem;
+}
+
+[hidden] {
+  display: none !important;
+}
