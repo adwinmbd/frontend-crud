@@ -37,10 +37,3 @@ npm run lint
 ```
 npm run format
 ```
-
-&#9888; This project is not finished. It is work in progress **(WIP)!** &#9888;
-
-### Todo
-
-- [x] Add update functionality
-- [ ] Add active class to navbar
