@@ -26,17 +26,9 @@ export class ApiService {
       return this.http.post<Todo>(this.baseUri, data).pipe(catchError(this.errorMgmt))
     }
 
-    // Get Todo
-    /*
-    getTodo(id): Observable<Todo> {
-      let url = `${this.baseUri}/${id}`;
-      return this.http.get<Todo>(url, {headers: this.headers}).pipe(catchError(this.errorMgmt))
-    }
-    */
-
     // Update Todo
-     updateTodo(id, data): Observable<Todo> {
-      let url = `${this.baseUri}/${id}`;
+    updateTodo(data): Observable<Todo> {
+        let url = `${this.baseUri}/${data.id}`;
       return this.http.put<Todo>(url, data, { headers: this.headers }).pipe(catchError(this.errorMgmt))
     }
 
