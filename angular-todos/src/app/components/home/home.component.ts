@@ -14,8 +14,6 @@ export class HomeComponent implements OnInit {
   editing:boolean=false;
   editTodo={}
 
-  title = 'Ng Todos';
-
   submitted = false;
   todoForm: FormGroup;
   
@@ -42,6 +40,7 @@ export class HomeComponent implements OnInit {
     return this.todoForm.controls;
   }
 
+  /*
   onSubmit():void|boolean {
     this.submitted = true;
     if (!this.todoForm.valid) {
@@ -79,6 +78,52 @@ export class HomeComponent implements OnInit {
       }
     }
   }
+  */
+
+  async onSubmit() {
+    this.submitted = true;
+    if (!this.todoForm.valid) {
+      return false;
+    } else {
+      if(this.editing===false){
+
+        try{
+          let info = {text:this.todoForm.get('text').value}
+
+          let res:any = await this.apiService.createTodo(info).toPromise();
+          console.log('Todo successfully created!')
+          this.todos = [...this.todos, res.todo];
+          this.todoForm.setValue({
+            id:"",
+            text: "",
+          })
+          return;
+        }
+        catch(e){
+          console.log(e);
+          return;
+        }
+      }else{
+
+        try {
+          const res:any = await this.apiService.updateTodo(this.todoForm.value).toPromise();
+          console.log('Todo updated successfully!')
+          const info = res.todo;
+          this.todos = this.todos.map((todo) =>
+            todo.id === this.todoForm.value.id ? info : todo
+          );
+          this.todoForm.setValue({
+            id:"",
+            text: "",
+           })
+           return;
+        } catch (e) {
+          console.log(e);
+          return;
+        }
+      }
+    }
+  }
 
   readTodos():void{
     this.apiService.getTodos().subscribe((res:any) => {
@@ -95,12 +140,24 @@ export class HomeComponent implements OnInit {
      });
   }
 
+  /*
   removeTodo(todo:Todo):void {
     if(window.confirm('Are you sure?')) {
         this.apiService.deleteTodo(todo.id).subscribe((res) => {
             this.todos = this.todos.filter(t => t.id !== todo.id);
           }
-        )    
+        )  
+    }
+  }
+  */
+
+  async removeTodo(todo:Todo){
+    try {
+      await this.apiService.deleteTodo(todo.id);
+      this.todos = this.todos.filter(t => t.id !== todo.id);
+    } catch (e) {
+      console.log(e);
+      return;
     }
   }
 }
