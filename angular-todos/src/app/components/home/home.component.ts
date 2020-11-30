@@ -48,38 +48,34 @@ export class HomeComponent implements OnInit {
       return false;
     } else {
       if(this.editing===false){
-        this.apiService.createTodo(this.todoForm.value).subscribe(
+        let info = {text:this.todoForm.get('text').value}
+        this.apiService.createTodo(info).subscribe(
           (res:any) => {
             console.log('Todo successfully created!')
             this.todos = [...this.todos, res.todo];
-            /*
-            const info = res.todo;
-            this.todos = this.todos.map((todo) =>
-              todo.id === this.editTodo.id ? info : todo
-            );
-            */
-           this.todoForm.setValue({
+            this.todoForm.setValue({
+            id:"",
             text: "",
            })
           }, (error) => {
             console.log(error);
           });
       }else{
-        console.log('not editing')
 
-        /*
-        let id = this.actRoute.snapshot.paramMap.get('id');
-        this.apiService.updateTodo(id, this.todoForm.value)
-          .subscribe((res:any) => {
-            const info = res.todo;
-            this.todos = this.todos.map((todo) =>
-              todo.id === this.editTodo.id ? info : todo
-            );
-            console.log('Employee updated successfully!')
-          }, (error) => {
-            console.log(error)
-          })
-        */
+        this.apiService.updateTodo(this.todoForm.value)
+        .subscribe((res:any) => {
+          console.log('Todo updated successfully!')
+          const info = res.todo;
+          this.todos = this.todos.map((todo) =>
+            todo.id === this.todoForm.value.id ? info : todo
+          );
+          this.todoForm.setValue({
+            id:"",
+            text: "",
+           })
+        }, (error) => {
+          console.log(error)
+        })
       }
     }
   }
