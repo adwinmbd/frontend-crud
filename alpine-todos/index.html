@@ -15,90 +15,74 @@
           <div class="column is-5-tablet is-10-mobile">
             <div class="card">
               <header class="header">
-                <p class="card-header-title">Todo App</p>
+                <p class="card-header-title heading">Todo App</p>
               </header>
               <div class="card-content">
-                <template x-if="editing === false">
-                  <form @submit.prevent="addTodo()">
-                    <div class="field has-addons has-addons-centered">
-                      <div class="control">
-                        <input
-                          x-model="newTodo.text"
-                          class="input"
-                          type="text"
-                          placeholder="Add todo..."
-                        />
-                      </div>
-                      <div class="control">
+                <form @submit.prevent="postTodo(newTodo)">
+                  <div class="field has-addons has-addons-centered">
+                    <div class="control">
+                      <input
+                        x-model="newTodo.text"
+                        class="input"
+                        type="text"
+                        placeholder="Todo details ..."
+                      />
+                    </div>
+                    <div class="control">
+                      <template x-if="editing === false">
                         <button class="button is-primary" type="submit">
                           <span class="icon is-small">
                             <img height="32" width="32" src="/plus.svg" />
                           </span>
                         </button>
-                      </div>
-                    </div>
-                  </form>
-                </template>
-                <!--<div v-else>-->
-                <template x-if="editing === true">
-                  <form @submit.prevent="updateTodo()">
-                    <!-- <input :value="editTodo.id" type="hidden" /> -->
-                    <div class="field has-addons has-addons-centered">
-                      <div class="control">
-                        <input
-                          x-model="editTodo.text"
-                          class="input"
-                          type="text"
-                          placeholder="Update todo..."
-                        />
-                      </div>
-                      <div class="control">
+                      </template>
+                      <template x-if="editing === true">
                         <button class="button is-warning" type="submit">
                           <span class="icon is-small">
                             <img height="32" width="32" src="/edit.svg" />
                           </span>
                         </button>
-                      </div>
+                      </template>
                     </div>
-                  </form>
-                </template>
+                  </div>
+                </form>
               </div>
               <hr />
-              <ul>
-                <template x-for="todo in todos" :key="todo.id">
-                  <li class="list-item">
-                    <div
-                      class="is-flex"
-                      style="
-                        align-items: center;
-                        padding: 8px;
-                        border-bottom: 2px solid whitesmoke;
-                      "
-                    >
-                      <span class="is-pulled-left" x-text="todo.text"></span>
-                      <div style="flex: 1"></div>
-                      <button
-                        class="button is-text is-pulled-right is-small is-warning"
-                        @click="setEditMode(todo)"
-                      >
-                        <span class="icon">
-                          <img height="32" width="32" src="/edit.svg" />
-                        </span>
-                      </button>
-                      &nbsp;
-                      <button
-                        class="button is-text is-pulled-right is-small is-danger"
-                        @click="deleteTodo(todo.id)"
-                      >
-                        <span class="icon">
-                          <img height="32" width="32" src="/trash.svg" />
-                        </span>
-                      </button>
-                    </div>
-                  </li>
-                </template>
-              </ul>
-            </div>
+              <div id="todo-table">
+                  <template x-if="todos.length===0">
+                    <div class="loader"></div>
+                  </template>
+                  <div>
+                      <table class="table is-hoverable is-fullwidth is-striped">
+                          <tbody>
+                            <template x-for="todo in todos" :key="todo.id">
+                              <tr>
+                                <td x-text="todo.text"></td>
+                                <td class="has-text-right">
+                                    <button
+                                        class="button is-text is-small is-warning" 
+                                        @click="setEditMode(todo)"
+                                    >
+                                        <span class="icon">
+                                        <img height="32" width="32" src="./edit.svg" />
+                                        </span>
+                                    </button>
+                                    <button
+                                        class="button is-text is-small is-danger" 
+                                        @click="deleteTodo(todo.id)"
+                                    >
+                                        <span class="icon">
+                                        <img height="32" width="32" src="./trash.svg" />
+                                        </span>
+                                    </button>
+                                </td>
+                              </tr>
+                            </template>
+                          </tbody>
+                      </table>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>
