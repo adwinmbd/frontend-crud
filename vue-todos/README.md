@@ -2,7 +2,7 @@
 
 > A **CRUD** todo app built using [Vue.js](https://vuejs.org) framework and [Mirage.js](https://miragejs.com/) mock API.
 
-![Home page](vue-todo.png)
+![Home page](vue-todos-crud.png)
 
 ## Clone repo in an empty directory
 
