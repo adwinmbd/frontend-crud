@@ -2,7 +2,7 @@
 
 > A **CRUD** todo app built using [Alpine.js](https://github.com/alpinejs/alpine) framework and [Mirage.js](https://miragejs.com/) mock API.
 
-![Home page](alpine-todo.png)
+![Home page](alpine-todos-crud.png)
 
 ## Clone repo in an empty directory
 

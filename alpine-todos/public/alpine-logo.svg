@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16pt" height="16pt" viewBox="0 0 16 16" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64pt" height="64pt" viewBox="0 0 64 64" version="1.1">
 <defs>
-<radialGradient id="radial0" gradientUnits="userSpaceOnUse" cx="0.431" cy="0.33" fx="0.431" fy="0.33" r="0.637" gradientTransform="matrix(15.999986,0.020944,-0.020944,15.999986,-0,-0.016)">
+<radialGradient id="radial0" gradientUnits="userSpaceOnUse" cx="0.431" cy="0.33" fx="0.431" fy="0.33" r="0.637" gradientTransform="matrix(63.999945,0.083776,-0.083776,63.999945,-0,-0.064)">
 <stop offset="0" style="stop-color:rgb(100%,100%,100%);stop-opacity:0.231373;"/>
 <stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:0;"/>
 </radialGradient>
 </defs>
 <g id="surface1">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(18.039216%,20.392157%,25.098039%);fill-opacity:1;" d="M 16 8 C 16 12.417969 12.417969 16 8 16 C 3.582031 16 0 12.417969 0 8 C 0 3.582031 3.582031 0 8 0 C 12.417969 0 16 3.582031 16 8 Z M 16 8 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(84.705882%,87.058824%,91.372549%);fill-opacity:1;" d="M 11.117188 4.875 L 14.230469 7.992188 L 11.117188 11.105469 L 8 7.992188 Z M 11.117188 4.875 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(54.117647%,75.294118%,81.176471%);fill-opacity:1;" d="M 4.898438 4.875 L 11.121094 11.105469 L 4.898438 11.105469 L 1.78125 7.992188 Z M 4.898438 4.875 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:url(#radial0);" d="M 16 8 C 16 12.417969 12.417969 16 8 16 C 3.582031 16 0 12.417969 0 8 C 0 3.582031 3.582031 0 8 0 C 12.417969 0 16 3.582031 16 8 Z M 16 8 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(18.039216%,20.392157%,25.098039%);fill-opacity:1;" d="M 64 32 C 64 49.671875 49.671875 64 32 64 C 14.328125 64 0 49.671875 0 32 C 0 14.328125 14.328125 0 32 0 C 49.671875 0 64 14.328125 64 32 Z M 64 32 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(84.705882%,87.058824%,91.372549%);fill-opacity:1;" d="M 44.460938 19.5 L 56.925781 31.960938 L 44.460938 44.425781 L 32 31.960938 Z M 44.460938 19.5 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(54.117647%,75.294118%,81.176471%);fill-opacity:1;" d="M 19.585938 19.5 L 44.488281 44.425781 L 19.585938 44.425781 L 7.125 31.960938 Z M 19.585938 19.5 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#radial0);" d="M 64 32 C 64 49.671875 49.671875 64 32 64 C 14.328125 64 0 49.671875 0 32 C 0 14.328125 14.328125 0 32 0 C 49.671875 0 64 14.328125 64 32 Z M 64 32 "/>
 </g>
 </svg>
