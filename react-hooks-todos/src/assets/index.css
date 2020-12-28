@@ -49,3 +49,12 @@ nav ul li {
   border-top: 0.3rem solid #3498db; /* Blue */
   animation: spin 2s linear infinite;
 }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
