@@ -1,4 +1,4 @@
-# React Class Todo CRUD
+# React Hooks Todo CRUD
 
 > React app to demonstrate CRUD operations in todo app using classes.
 
