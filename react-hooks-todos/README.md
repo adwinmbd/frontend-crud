@@ -35,3 +35,7 @@ npm run lint
 ```
 npm run format
 ```
+
+## Todo
+
+- [ ] Fix editform not updating text on click
