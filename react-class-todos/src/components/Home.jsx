@@ -62,7 +62,7 @@ export default class Home extends Component{
         // }, ()=>{console.log(this.state.editedTodo, this.state.editing)});
         });
 
-        console.log("Todo #", data.todo.id, "is clicked");
+        // console.log("Todo #", data.todo.id, "is clicked");
     }
     
     updateTodo = (editedTodo) => {
@@ -117,7 +117,7 @@ export default class Home extends Component{
                 <div className="column is-5-tablet is-10-mobile">
                     <div className="card">
                         <header className="header">
-                            <p className="card-header-text heading">
+                            <p className="card-header-title heading">
                                 Todos
                             </p>
                         </header>
