@@ -1,8 +1,8 @@
-# React Todo Class CRUD
+# React Class Todo CRUD
 
 > React app to demonstrate CRUD operations in todo app using classes.
 
-![Home page](todos-class-crud.png)
+![Home page](react-class-todos-crud.png)
 
 ## Install:
 
@@ -23,9 +23,3 @@ Access the app on [http://localhost:3000](http://localhost:3000) in the browser.
 ```
 npm run build
 ```
-
-## Todo
-
-- [ ] Style h1 title
-- [ ] Add description picture
-- [ ] Fix active style not showing in navigation

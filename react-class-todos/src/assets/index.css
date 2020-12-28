@@ -26,5 +26,31 @@ body {
 }
 
 .selectedNav {
+  /* border-bottom: 2px solid orchid; */
+  /* background-color: red; */
   border-bottom: 2px solid orchid;
+}
+
+.is-active {
+  border-bottom: 2px solid orchid;
+}
+
+.active {
+  /*border-bottom: 2px solid orchid;*/
+  background-color: yellow;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  padding: 20px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-right: 0.5rem;
 }
