@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AddForm from './AddForm'
-import TodoList from './TodoList'
+import Table from './Table'
 import EditForm from './EditForm'
 
 export default class Home extends Component{
@@ -52,16 +52,14 @@ export default class Home extends Component{
     getEditTodo = data => {
 
         const editTodo = {
-            id: data.todo.id,
-            text: data.todo.text,
-            completed: data.todo.completed
+            id: data.id,
+            text: data.text,
         };
         this.setState({
             editing:true,
             editedTodo: editTodo
         // }, ()=>{console.log(this.state.editedTodo, this.state.editing)});
         });
-
         // console.log("Todo #", data.todo.id, "is clicked");
     }
     
@@ -131,17 +129,12 @@ export default class Home extends Component{
                             <AddForm addTodoProps={this.addTodoItem}/>
                         )}
                         <hr />
-                            <ul>
-                                <TodoList todos={this.state.todos} 
-                                    getEditTodoProps={this.getEditTodo} 
-                                    deleteTodoProps={this.delTodo}
-                                />
-                                {
-                                    this.state.todos.length<1?
-                                    <li>Nothing here !</li>
-                                    :<></>
-                                }
-                            </ul>
+                            {
+                                this.state.todos.length<1?
+                                <div className="loader"></div>
+                                :
+                                <Table todos={this.state.todos} getEditTodoProps={this.getEditTodo} deleteTodoProps={this.delTodo}/>
+                            }
                         </div>
                     </div>
                 </div>
@@ -149,3 +142,4 @@ export default class Home extends Component{
         )
     }
 }
+
