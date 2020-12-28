@@ -2,7 +2,7 @@
 
 > React app to demonstrate CRUD operations in todo app using classes.
 
-![Home page](react-class-todos-crud.png)
+![Home page](react-todos-crud.png)
 
 ## Install:
 
@@ -23,3 +23,7 @@ Access the app on [http://localhost:3000](http://localhost:3000) in the browser.
 ```
 npm run build
 ```
+
+## Todo
+
+- [ ] Fix editform not updating text on click
