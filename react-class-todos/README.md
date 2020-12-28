@@ -1,4 +1,4 @@
-# React Todo Class CRUD
+# React Class Todo CRUD
 
 > React app to demonstrate CRUD operations in todo app using classes.
 
