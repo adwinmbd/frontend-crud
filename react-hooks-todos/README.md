@@ -23,3 +23,15 @@ Access the app on [http://localhost:3000](http://localhost:3000) in the browser.
 ```
 npm run build
 ```
+
+## To lint:
+
+```
+npm run lint
+```
+
+## To format:
+
+```
+npm run format
+```
