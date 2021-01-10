@@ -2,30 +2,26 @@ import React from 'react'
 
 export default function About(){
     return(
-        <div className="columns is-centered">
-            <div className="column is-5-tablet is-10-mobile">
+        <div className="row is-center">
+            <div className="col-10 col-5-md">
                 <div className="card">
-                <header className="header">
-                    <p className="card-header-title heading">
-                    About
+                    <header>
+                        <h4>About</h4>
+                    </header>
+                    <p>
+                        This is an SPA made with&nbsp; 
+                        <a href="https://miragejs.com">Mirage</a> and&nbsp; 
+                        <a href="https://reactjs.org">React</a>. It has two routes to
+                        help demonstrate how Mirage's in-memory database enables
+                        realistic data fetching and persisting during a single
+                        application session.
                     </p>
-                </header>
-                <div className="card-content">
-                    <p className="top">
-                    This is an SPA made with&nbsp;
-                    <a href="https://miragejs.com">Mirage</a> and&nbsp;
-                    <a href="https://reactjs.org">React</a>. It has two routes to
-                    help demonstrate how Mirage's in-memory database enables
-                    realistic data fetching and persisting during a single
-                    application session.
+                    <p>
+                        Mirage's state is reset whenever the application is
+                        reloaded.
                     </p>
-                    <p className="top">
-                    Mirage's state is reset whenever the application is
-                    reloaded.
-                    </p>
-                </div>
                 </div>
             </div>
-        </div>
+      </div>
     )
 }

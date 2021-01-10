@@ -1,8 +1,8 @@
-# React Class Todo CRUD
+# React Todo Class CRUD
 
-> React app to demonstrate CRUD operations in todo app using classes.
+> React app to demonstrate CRUD operations using classes.
 
-![Home page](react-todos-crud.png)
+![Home page](todos-class-crud.png)
 
 ## Install:
 
@@ -26,4 +26,4 @@ npm run build
 
 ## Todo
 
-- [ ] Fix editform not updating text on click
+- [ ] Improve update todo

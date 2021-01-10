@@ -1,6 +1,6 @@
 {
-  "name": "rkrud5",
-  "version": "0.0.0",
+  "name": "klass",
+  "version": "0.0.1",
   "scripts": {
     "start": "vite",
     "build": "vite build",
@@ -8,15 +8,14 @@
     "lint": "prettier --check \"src/**/*.js\""
   },
   "dependencies": {
-    "bulma": "^0.9.1",
     "miragejs": "^0.1.41",
-    "prettier": "^2.2.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "vite": "^1.0.0-rc.13",
-    "vite-plugin-react": "^4.0.0"
+    "@vitejs/plugin-react-refresh": "^1.1.0",
+    "prettier": "^2.2.1",
+    "vite": "^2.0.0-beta.12"
   }
 }

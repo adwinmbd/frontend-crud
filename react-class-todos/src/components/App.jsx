@@ -7,17 +7,12 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function App() {
 
   return (
-    // activeStyle={{borderBottom:'2px solid orchid'}}
     <Router>
-      <section className="section">
-        <div className="container">
-          <Navigation/>
-          <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/about' component={About} />
-          </Switch>
-        </div>
-      </section>
+        <Navigation/>
+        <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+        </Switch>
     </Router>
   )
 }

@@ -3,41 +3,16 @@
     Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 body {
-  /*padding: 0;
-    margin: 0;*/
   width: 100%;
   min-height: 100vh;
 }
 body {
   background-color: #e2e8f0;
-}
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-  margin-right: 0.5rem;
+  overflow: hidden;
 }
 
-.heading {
-  font-size: 1.5rem;
-}
-
-.selectedNav {
-  border-bottom: 2px solid orchid;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav ul li {
-  padding: 20px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-  margin-right: 0.5rem;
+.tabs a.selectedNav {
+  border-color: #14854f;
 }
 
 .loader {

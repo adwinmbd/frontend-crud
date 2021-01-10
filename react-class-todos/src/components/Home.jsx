@@ -5,11 +5,27 @@ import EditForm from './EditForm'
 
 export default class Home extends Component{
 
+    constructor(props) {
+        super(props);
+        this.addTodoItem = this.addTodoItem.bind(this);
+        this.getEditTodo = this.getEditTodo.bind(this);
+        this.updateTodo = this.updateTodo.bind(this);
+        this.delTodo = this.delTodo.bind(this);
+    
+        this.state = {
+            todos:[],
+            editedTodo: {},
+            editing : false
+        }
+    }
+
+    /*
     state = {
         todos:[],
         editedTodo: {},
         editing : false
     };
+    */
 
     async componentDidMount(){
         try {
@@ -22,7 +38,8 @@ export default class Home extends Component{
         }
     }
 
-    addTodoItem = todo => {
+    // addTodoItem = todo => {
+    addTodoItem (todo) {
 
         const sendTodo = async () => {
             try{
@@ -49,7 +66,8 @@ export default class Home extends Component{
         return;
     };
 
-    getEditTodo = data => {
+    // getEditTodo = data => {
+    getEditTodo (data) {
 
         const editTodo = {
             id: data.id,
@@ -63,7 +81,8 @@ export default class Home extends Component{
         // console.log("Todo #", data.todo.id, "is clicked");
     }
     
-    updateTodo = (editedTodo) => {
+    // updateTodo = (editedTodo) => {
+    updateTodo(editedTodo){
        const emendTodo = async () => {
             try {
                 await fetch(`/api/todos/${editedTodo.id}`, {
@@ -88,7 +107,8 @@ export default class Home extends Component{
         emendTodo();
     }
 
-    delTodo = id => {
+    // delTodo = id => {
+    delTodo(id){
         const delTodo = async () => {
             try {
                 await fetch(`/api/todos/${id}`, {
@@ -111,35 +131,32 @@ export default class Home extends Component{
 
     render(){
         return(
-            <div className="columns is-centered">
-                <div className="column is-5-tablet is-10-mobile">
+            <div className="row is-center">
+                <div className="col-10 col-5-md">
                     <div className="card">
-                        <header className="header">
-                            <p className="card-header-title heading">
-                                Todos
-                            </p>
+                        <header>
+                            <h4>Todos</h4>
                         </header>
-                        <div className="card-content">
                         {this.state.editing ? (
                             <EditForm editing={this.state.editing} 
                                 editedTodo={this.state.editedTodo} 
-                                updateTodoProps={this.updateTodo}
+                                updateTodoProps={this.updateTodo} 
                             />
                         ) : (
                             <AddForm addTodoProps={this.addTodoItem}/>
                         )}
-                        <hr />
-                            {
-                                this.state.todos.length<1?
-                                <div className="loader"></div>
-                                :
-                                <Table todos={this.state.todos} getEditTodoProps={this.getEditTodo} deleteTodoProps={this.delTodo}/>
-                            }
-                        </div>
+                    </div>
+                    <hr/>
+                    <div className="card">
+                        {
+                            this.state.todos.length<1?
+                            <div className="loader"></div>
+                            :
+                            <Table todos={this.state.todos} getEditTodoProps={this.getEditTodo} deleteTodoProps={this.delTodo}/>
+                        }
                     </div>
                 </div>
-            </div>  
+            </div>
         )
     }
 }
-
