@@ -1,8 +1,6 @@
-# React Hooks Todo CRUD
+# React To-do Hooks CRUD
 
-> React app to demonstrate CRUD operations in todo app using classes.
-
-![Home page](react-todos-crud.png)
+> React app to demonstrate CRUD operations using hooks.
 
 ## Install:
 
@@ -24,18 +22,6 @@ Access the app on [http://localhost:3000](http://localhost:3000) in the browser.
 npm run build
 ```
 
-## To lint:
+## To-do
 
-```
-npm run lint
-```
-
-## To format:
-
-```
-npm run format
-```
-
-## Todo
-
-- [ ] Fix editform not updating text on click
+- [ ] Improve update todo

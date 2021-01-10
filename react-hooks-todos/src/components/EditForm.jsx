@@ -2,6 +2,7 @@ import React, { useState } from "react"
 
 export default function EditForm(props){ 
 
+
     const [inputText, setInputText] = useState({
         text: props.editedTodo.text,
     })
@@ -32,28 +33,21 @@ export default function EditForm(props){
         })
         editTodo={}
     };
-    
+
     return (
         <form onSubmit={ handleSubmit }>
-            <div className="field has-addons has-addons-centered">
-                <div className="control">
-                    <input
-                        className="input"
-                        placeholder="Update Todo details..." 
-                        name="text"
-                        value={ inputText.text } 
-                        onChange={ onChange } 
-                        type="text"
-                    />
-                </div>
-                <div className="control">
-                    <button className="button is-warning">
-                        <span className="icon is-small">
-                            <img className="mr-1" height="32" width="32" src="./src/assets/create-outline.svg" />
-                        </span>
-                    </button>
-                </div>
-            </div>
+            <p className="grouped">
+            <input 
+                type="text" 
+                placeholder="Update todo ..." 
+                name="text" 
+                value={ inputText.text } 
+                onChange={ onChange } 
+            />
+            <button className="button primary icon-only">
+                <img height="18" width="18" src="./src/assets/add-circle-outline.svg" />
+            </button>
+            </p>
         </form>
     )
 }

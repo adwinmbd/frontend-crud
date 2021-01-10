@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import 'bulma/css/bulma.css'
 import './assets/index.css'
 import App from './components/App'
 import { makeServer } from "./server";
