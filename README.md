@@ -2,6 +2,8 @@
 
 > A collection of CRUD examples using various front-end frameworks
 
+![Home page](todos-crud.png)
+
 This repository contains these simple todo CRUD projects :
 
 - Alpine-todos
