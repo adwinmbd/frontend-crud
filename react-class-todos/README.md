@@ -2,8 +2,6 @@
 
 > React app to demonstrate CRUD operations using classes.
 
-![Home page](todos-crud.png)
-
 ## Install:
 
 ```
