@@ -104,35 +104,33 @@ export default function Home(){
        delTodo();
     };
 
+
     return(
-        <div className="columns is-centered">
-            <div className="column is-5-tablet is-10-mobile">
+        <div className="row is-center">
+            <div className="col-10 col-5-md">
                 <div className="card">
-                    <header className="header">
-                        <p className="card-header-title heading">
-                            Todos
-                        </p>
+                    <header>
+                        <h4>Todos</h4>
                     </header>
-                    <div className="card-content">
                     {editing ? (
                         <EditForm editing={ editing } 
                             editedTodo={ editedTodo } 
-                            updateTodoProps={ updateTodo }
+                            updateTodoProps={ updateTodo } 
                         />
                     ) : (
                         <AddForm addTodoProps={ addTodoItem }/>
                     )}
-                    <hr />
-                        {
-                            todos.length<1?
-                            (<div className="loader"></div>)
-                            :
-                            (<Table todos={ todos } getEditTodoProps={ getEditTodo } deleteTodoProps={ delTodo }/>)
-                        }
-                    </div>
+                </div>
+                <hr/>
+                <div className="card">
+                    {
+                        todos.length<1?
+                        <div className="loader"></div>
+                        :
+                        <Table todos={ todos } getEditTodoProps={ getEditTodo } deleteTodoProps={ delTodo }/>
+                    }
                 </div>
             </div>
-        </div>  
+        </div>
     )
 }
-
