@@ -1,8 +1,8 @@
-# React Todo Class CRUD
+# React To-do Class CRUD
 
 > React app to demonstrate CRUD operations using classes.
 
-![Home page](todos-class-crud.png)
+![Home page](todos-crud.png)
 
 ## Install:
 
