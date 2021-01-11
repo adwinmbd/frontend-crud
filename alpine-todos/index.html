@@ -1,91 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <title>Alpine.js Todo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/chota.min.css">
+    <link rel="icon" href="/favicon.ico">
+    <title>To-do App</title>
     <script type="module" src="/src/index.js"></script>
     <script src="/src/crud.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <section class="section" x-data="todos()" x-init="fetchTodos()">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-5-tablet is-10-mobile">
-            <div class="card">
-              <header class="header">
-                <p class="card-header-title heading">Todo App</p>
-              </header>
-              <div class="card-content">
-                <form @submit.prevent="postTodo(newTodo)">
-                  <div class="field has-addons has-addons-centered">
-                    <div class="control">
-                      <input
-                        x-model="newTodo.text"
-                        class="input"
-                        type="text"
-                        placeholder="Todo details ..."
-                      />
-                    </div>
-                    <div class="control">
-                      <template x-if="editing === false">
-                        <button class="button is-primary" type="submit">
-                          <span class="icon is-small">
-                            <img height="32" width="32" src="/plus.svg" />
-                          </span>
-                        </button>
-                      </template>
-                      <template x-if="editing === true">
-                        <button class="button is-warning" type="submit">
-                          <span class="icon is-small">
-                            <img height="32" width="32" src="/edit.svg" />
-                          </span>
-                        </button>
-                      </template>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <hr />
-              <div id="todo-table">
-                  <template x-if="todos.length===0">
-                    <div class="loader"></div>
+    <div x-data="todos()" x-init="fetchTodos()">
+      <div class="row is-center">
+        <div class="col-10 col-5-md">
+          <div class="card" style="margin-top: 15%;">
+            <header>
+              <h4>Todos</h4>
+            </header>
+              <form @submit.prevent="postTodo(newTodo)">
+                <p class="grouped">
+                  <input x-model="newTodo.text" type="text" placeholder="To-do details ...">
+                  <template x-if="editing === false">
+                    <button class="button primary icon-only">
+                      <img height="18" width="18" src="./plus.svg" />
+                    </button>
                   </template>
-                  <div>
-                      <table class="table is-hoverable is-fullwidth is-striped">
-                          <tbody>
-                            <template x-for="todo in todos" :key="todo.id">
-                              <tr>
-                                <td x-text="todo.text"></td>
-                                <td class="has-text-right">
-                                    <button
-                                        class="button is-text is-small is-warning" 
-                                        @click="setEditMode(todo)"
-                                    >
-                                        <span class="icon">
-                                        <img height="32" width="32" src="./edit.svg" />
-                                        </span>
-                                    </button>
-                                    <button
-                                        class="button is-text is-small is-danger" 
-                                        @click="deleteTodo(todo.id)"
-                                    >
-                                        <span class="icon">
-                                        <img height="32" width="32" src="./trash.svg" />
-                                        </span>
-                                    </button>
-                                </td>
-                              </tr>
-                            </template>
-                          </tbody>
-                      </table>
-                  </div>
-                </div>
-              </div>
+                  <template x-if="editing === true">
+                    <button class="button primary icon-only">
+                      <img height="18" width="18" src="./edit.svg" />
+                    </button>
+                  </template>
+                </p>
+              </form>
+          </div>
+          <hr>
+          <div class="card">
+            <table class="striped">
+              <tbody>
+                <template x-for="todo in todos" :key="todo.id">
+                  <tr>
+                    <td x-text="todo.text"></td>
+                    <td class="pull-right">
+                      <button class="button icon-only" @click="setEditMode(todo)">
+                        <img height="18" width="18" src="./edit.svg" />
+                      </button>
+                      <button class="button error icon-only" @click="deleteTodo(todo.id)">
+                        <img height="18" width="18" src="./trash.svg" />
+                      </button>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </body>
 </html>
