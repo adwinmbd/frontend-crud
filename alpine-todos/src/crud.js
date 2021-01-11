@@ -29,7 +29,9 @@ function todos() {
 
     setEditMode(todo) {
       this.editing = true;
+      // console.log(todo.text)
       this.newTodo = { ...todo };
+      console.log(this.newTodo.text)
     },
     // add or edit todo
     async postTodo(todo) {

@@ -1,5 +1,4 @@
 import "alpinejs";
-import 'bulma/css/bulma.css'
 import './assets/site.css'
 import { makeServer } from "./server";
 
