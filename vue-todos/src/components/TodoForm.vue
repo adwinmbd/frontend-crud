@@ -1,29 +1,19 @@
 <template>
-    <div>
-        <form @submit.prevent="handleSubmit">
-            <div class="field has-addons has-addons-centered">
-              <div class="control">
-                <input v-model="newTodo.text" class="input" type="text" placeholder="Todo details ..." />
-              </div>
-              <div class="control">
-                <span v-if="isEditing === false">
-                    <button class="button is-primary">
-                        <span class="icon is-small">
-                        <img height="32" width="32" src="../assets/img/plus-icon.svg" />
-                        </span>
-                    </button>
-                </span>
-                <span v-else>
-                    <button class="button is-warning">
-                        <span class="icon is-small">
-                        <img height="32" width="32" src="../assets/img/edit-icon.svg" />
-                        </span>
-                    </button>
-                </span>
-              </div>
-            </div>
-          </form>
-    </div>
+    <form @submit.prevent="handleSubmit">
+        <p class="grouped">
+            <input v-model="newTodo.text" type="text" placeholder="Todo details ...">
+            <span v-if="isEditing === false">
+                <button class="button primary icon-only">
+                    <img height="18" width="18" src="../assets/img/plus-icon.svg" />
+                </button>
+            </span>
+            <span v-else>
+                <button class="button icon-only">
+                    <img height="18" width="18" src="../assets/img/edit-icon.svg" />
+                </button>
+            </span>
+        </p>
+    </form>
 </template>
 <script>
 export default {

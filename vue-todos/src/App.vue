@@ -1,28 +1,21 @@
 <template>
   <div id="app">
-    <section class="section">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-5-tablet is-10-mobile">
-            <div id="nav">
-              <router-link to="/">Home</router-link>
-              <router-link to="/about">About</router-link>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered">
-          <div class="column is-5-tablet is-10-mobile">
-            <router-view />
-          </div>
-        </div>
+    <Navigation />
+    <div class="row is-center">
+      <div class="col-10 col-5-md">
+        <router-view />
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
 <script>
+import Navigation from "./components/Navigation.vue";
 export default {
   name: "App",
+  components: {
+    Navigation,
+  }
 };
 </script>
 
@@ -32,17 +25,13 @@ export default {
     Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 body {
-  /*padding: 0;
-  margin: 0;
-  width: 100%;*/
+  background-color: #e2e8f0;
   width: 100%;
   min-height: 100vh;
-}
-body {
-  /*background-color: #e2e8f0;*/
-  background-color: #e2e8f0;
+  overflow: hidden;
 }
 
+/*
 #nav a {
   font-weight: bold;
   color: #2c3e50;
@@ -55,4 +44,5 @@ body {
 .heading {
   font-size: 1.5rem;
 }
+*/
 </style>

@@ -1,8 +1,6 @@
-# VUE-CRUD
+# Vue To-do CRUD
 
-> A **CRUD** todo app built using [Vue.js](https://vuejs.org) framework and [Mirage.js](https://miragejs.com/) mock API.
-
-![Home page](vue-todos-crud.png)
+> A **CRUD** to-do app built using [Vue.js](https://vuejs.org) framework and [Mirage.js](https://miragejs.com/) mock API.
 
 ## Clone repo in an empty directory
 
@@ -37,3 +35,6 @@ npm run lint
 ```
 npm run format
 ```
+
+## To-do:
+- [ ] Use vue3 composition API

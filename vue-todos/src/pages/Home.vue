@@ -1,22 +1,22 @@
 <template>
-  <div>
-    <div class="card">
-      <header class="header">
-        <p class="card-header-title heading">Todos</p>
+  <div class="card">
+      <header>
+        <h4>Todos</h4>
       </header>
-      <div class="card-content">
-        <todo-form @add-todo="postTodo" :editedTodo="editedTodo" :editing="editing"/>
-        <hr />
-        <todo-table :todos="todos" @edit-todo="editTodo" @delete-todo="deleteTodo"/>
-      </div>
-    </div>
+      <todo-form @add-todo="postTodo" :editedTodo="editedTodo" :editing="editing"/>
+  </div>
+  <hr />
+  <div class="card">
+    <todo-table :todos="todos" @edit-todo="editTodo" @delete-todo="deleteTodo"/>
   </div>
 </template>
 
 <style scoped>
+/*
 .heading {
   font-size: 1.5rem;
 }
+*/
 </style>
 
 <script>
