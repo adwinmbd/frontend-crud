@@ -1,45 +1,31 @@
 <template>
-    <div id="todo-table">
-        <div v-if="todos.length===0">
-            <Spinner></Spinner>
-        </div>
-        <div>
-            <table class="table is-hoverable is-fullwidth is-striped">
-                <tbody>
-                    <tr :key="todo.id" v-for="todo in todos">
-                        <td>{{todo.text}}</td>
-                        <td class="has-text-right">
-                            <button
-                                class="button is-text is-small is-warning"
-                                @click="editMode(todo)"
-                            >
-                                <span class="icon">
-                                <img height="32" width="32" src="../assets/img/edit-icon.svg" />
-                                </span>
-                            </button>
-                            <button
-                                class="button is-text is-small is-danger"
-                                @click="$emit('delete-todo', todo.id)"
-                            >
-                                <span class="icon">
-                                <img height="32" width="32" src="../assets/img/trash-icon.svg" />
-                                </span>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div v-if="todos.length===0">
+        <Spinner></Spinner>
     </div>
+    <table class="striped">
+        <tbody>
+            <tr :key="todo.id" v-for="todo in todos">
+                <td>{{todo.text}}</td>
+                <td class="pull-right">
+                    <button class="button icon-only" @click="editMode(todo)">
+                        <img height="18" width="18" src="../assets/img/edit-icon.svg" />
+                    </button>
+                    <button class="button error icon-only" @click="$emit('delete-todo', todo.id)">
+                        <img height="18" width="18" src="../assets/img/trash-icon.svg" />
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </template>
 <script>
 import Spinner from "./Spinner.vue";
 export default {
-
     name:'todo-table',
     components: {
         Spinner,
     },
+    emits: ['delete-todo', 'edit-todo'],
     props: {
         todos: Array,
     },
