@@ -22,6 +22,18 @@ Access the app on [http://localhost:3000](http://localhost:3000) in the browser.
 npm run build
 ```
 
+## To style code:
+
+```
+npm run format
+```
+
+## To check code format:
+
+```
+npm run lint
+```
+
 ## Todo
 
 - [ ] Improve update todo
