@@ -8,6 +8,7 @@ export default function Home(){
     const [todos, setTodos] = useState([]);
     const [editing, setEditing] = useState(false);
     const [editedTodo, setEditedTodo]= useState({});
+    let allTodos = [];
 
 
     useEffect(() => {
@@ -16,7 +17,8 @@ export default function Home(){
             try {
                 const res = await fetch("/api/todos")
                 .then((r) => r.json());
-                setTodos(Object.values(res.todos))
+                allTodos = res.todos;
+                setTodos(allTodos)
                 } catch (e) {
                     console.log(e);
                 return;
