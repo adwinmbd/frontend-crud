@@ -10,4 +10,5 @@ This repository contains these simple todo CRUD projects :
 - Angular-todos
 - React-class-todos
 - React-hooks-todos
+- Svelte-todos
 - Vue-todos
