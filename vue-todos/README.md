@@ -24,16 +24,16 @@ Opens in the browser on [http://localhost:3000](http://localhost:3000)
 npm run build
 ```
 
-## To lint:
-
-```
-npm run lint
-```
-
-## To lint:
+## To style code:
 
 ```
 npm run format
+```
+
+## To check code format:
+
+```
+npm run lint
 ```
 
 ## To-do:
